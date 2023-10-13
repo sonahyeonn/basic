@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.치료::after {
+    content: "";
+    /* 인라인요소, after랑 세트 */
+    clear: both;
+    /* 약 */
+    display: block;
+    /* clear: both는 블록요소에만 사용되므로 블록요소로 바꿔준다 */
+}
+
+.전체 {
+    width: 1000px;
+    background-color: #EADBC8;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.전체 .첫번째 {
+    background-color: #046ab9;
+    padding: 20px;
+}
+
+.전체 .첫번째 .자식 {
+    float: left;
+    background-color: #02784d;
+    height: 200px;
+    width: 24.25%;
+    margin-right: 1%;
+}
+
+/* 자식1의 상, 하를 position: absolute를 다 시키면 자식2를 만들었을때 높이가 이상해지므로 자식1에게 높이값을 억지로 줘야함 */
+.전체 .첫번째 .자식.자식1 {
+    position: relative;
+}
+
+.전체 .첫번째 .자식.자식1 .상 {
+    width: 100%;
+    /* 부모의 넓이를 100% 차지함 */
+    height: 100%;
+    /* 부모의 높이를 100% 차지함 */
+    background-image: url(https://img.megabox.co.kr/SharedImg/2023/09/07/LoJlh77ynjKOUFHzyqEjBRvpyVYuYqQu_1100.jpg
+);
+    background-size: cover;
+    background-position: center;
+}
+
+.전체 .첫번째 .자식.자식1 .하 {
+    background-image: url(https://img.megabox.co.kr/SharedImg/2023/08/30/9rMxPoOK8ZN3cdXpjpoedHUO2taDDYmR_380.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    /* 마우스를 올릴때도 뗄때도 시간을 줘야하면 hover 준 하가 아니라 원래 하에게 */
+}
+
+.전체 .첫번째 .자식.자식1 .하:hover {
+    opacity: 0;
+    /* 공간을 차지하지만 단지 우리눈에 안보이는 것뿐 */
+}
+
+.전체 .첫번째 .자식.자식2 {
+    position: relative;
+    background-image: url(https://img.megabox.co.kr/SharedImg/2023/09/07/U1m0fzT3UBw3VMVrEPv5jkEgj75pGBLp_1100.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.전체 .첫번째 .자식.자식2 .상 {
+    height: 100%;
+    width: 100%;
+    left: 100%;
+    top: 0;
+    position: absolute;
+    /* 되면->자식의 공간만큼만 넓이를 차지//넓이 설정 해줘야 한다 */
+    background-image: url(https://img.megabox.co.kr/SharedImg/2023/09/07/lcGO2i3CIr3Q2xaXKt5fS5HOl2z9yX2R_1100.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.전체 .첫번째 .자식.자식2:hover .상 {
+    left: 0;
+}
+
+.전체 .첫번째 .자식.자식3 {
+    position: relative;
+    overflow: hidden;
+}
+
+.전체 .첫번째 .자식.자식3 .yt {
+    width: 100%;
+    /* 기준이 되어주는것의 100% */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* transform: translate(x값,y값);//%의 기준이 자기자신 */
+    transform: translate(-50%, -50%) scale(1.4);
+}
+
+.전체 .첫번째 .자식.자식4 {
+    margin-right: 0%;
+}
+
+.전체 .첫번째 .자식.자식4 iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.전체 .두번째 {
+    background-color: #B4B4B3;
+    padding: 20px;
+}
+
+.전체 .두번째 .자식 {
+    background-color: #CCC8AA;
+    width: 200px;
+    height: 400px;
+    float: left;
+    margin-right: 30px;
+    padding: 10px;
+    border: 5px solid #113946;
+    /* 내 공간 = 넓이(높이) + padding + border */
+    box-sizing: border-box;
+    /* 내 공간안에 padding과 border를 포함하는 명령 */
+}
+
+/* .자식.자식1 (붙여쓰는것)은 자식이라고 불러도 대답하고 자식1이라고 불러도 대답해야하는 요소, 결국 한덩어리. 띄워쓰는 것은 내 뱃속에 있는거 중에서 부르는 것 */
+.전체 .두번째 .자식.자식1 {}
+
+.전체 .두번째 .자식.자식2 {}
+
+.전체 .두번째 .자식.자식3 {
+    /* 한줄복사 alt + shift + ↓ 
+       이모티콘 window + . */
+    /* 값이 4개일때는 시계방향으로 */
+    /* padding: top right bottom left;
+       padding: 위 오른쪽 아래 왼쪽; */
+    padding: 10px 20px 30px 40px;
+    /* padding: 위 좌우 아래; */
+    padding: 20px 30px 40px;
+    /* padding: 상하 좌우; */
+    padding: 20px 40px;
+    /* padding: 상하좌우; */
+    padding: 20px;
+
+
+    /* padding과 margin의 %(백분율)의 기준은 부모의 넓이(높이는 상관없음)  */
+    /* 상하좌우에 2%(부모의 넓이 기준)의 padding */
+    padding: 2%;
+}
+
+.전체 .두번째 .자식.자식4 {
+    margin-right: 0;
+}

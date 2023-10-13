@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    /* margin 값은 -가능하나 padding 값은 -불가능 */
+}
+
+.깨짐현상방지::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#전체 {
+    /* 아이디 태그를 호출하는 방법은 .이 아니라 #이다
+    아이디는 전체 사이트에 유일한 이름이어야 한다. 무조건 하나!!!!!
+    그리고 두가지 이름이 들어갈 수 없다. ex) "전체" 됨 "전체 왕부모"는 안됨 */
+    background-color: #004225;
+    width: 1000px;
+    margin: 30px auto 0;
+    /* 위 좌우 아래 */
+
+    /* 
+margin: 상하 좌우
+margin: 0 auto;는 다음과 같다
+margin-top: 0;
+margin-bottom: 0;
+margin-left: auto;
+margin-right: auto; */
+}
+
+#전체 .놀부 {
+    padding: 20px;
+}
+
+#전체 .놀부 .자식 {
+    width: 23.5%;
+    margin-right: 2%;
+    background-color: #5C5470;
+    float: left;
+
+}
+
+#전체 .놀부 .자식.자식1 {}
+
+#전체 .놀부 .자식.자식1 img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+#전체 .놀부 .자식.자식2 {
+    /* 공간의 넓이=padding-left+border-left+width+padding-right+border-right
+   공간의 높이=padding-top+border-top+height+padding-bottom+border-bottom
+   공간의 넓이=10px + 5px + 25% + 10px + 5px
+   공간의 높이=10px + 5px + 자식의높이 + 10px + 5px */
+    padding: 10px;
+    border: 5px solid #B2533E;
+    box-sizing: border-box;
+    background-image: url(https://entertainimg.kbsmedia.co.kr/cms/uploads/CONTENTS_20211124114317_481d0c7a225fc73033f53d0f87fae556.jpg);
+}
+
+#전체 .놀부 .자식.자식3 {
+    height: 200px;
+    background-image: url(https://cdn-icons-png.flaticon.com/128/3419/3419250.png);
+    /* 백그라운드에 이미지가 들어왔을때는 백그라운드라는 말을 써서 조정한다 */
+    background-size: 50px;
+    /* 이미지 크기조절 */
+    background-repeat: no-repeat;
+    /* 이미지 반복 */
+    background-position: center center;
+    /* x축, y축 -> 값이 같을때는 아래와 같이 단축가능 */
+    background-position: center;
+    background-position: 50%;
+}
+
+#전체 .놀부 .자식.자식4 {
+    position: relative;
+    margin-right: 0;
+    height: 200px;
+    background-image: url(https://i.fltcdn.net/contents/1178/original_1427021723575_fazpstw3ik9.jpeg);
+    background-size: cover;
+    /* 사진이 제대로 안나오는 이유 */
+    /* (비율을 그대로 유지하면서) 넓이(가로)를 맞춘뒤 아래쪽이 남으면 그만큼 세로로 길어진다. 영역보다 사진이 넘치는건 상관안함. 공간 커버가 목적이기 때문 */
+    background-position: center;
+    /* center나 top, bottom 같은 값 줄때는 한번만, 픽셀 같은 절대값을 줄때는 x축, y축 모두 적어줘야 한다 */
+    /* 절대값 부여시 마이너스 값 줄수 있다 */
+    overflow: hidden;
+
+}
+
+#전체 .놀부 .자식.자식4 .text {
+    background-color: #7C9D96;
+    position: absolute;
+    /* 부모들에게 매달린다. 
+    자식4에게 갔더니 포지션 없음 놀부에게 갔더니 포지션 없음 전체에 갔더니 없음 그러면 바디에 붙음. 아빠, 할아버지. 형제나 형 아님 */
+    padding: 10px 30px;
+    left: 50%;
+    /* 기준: 부모의 넓이 */
+    top: 100%;
+    /* 기준: 부모의 높이 */
+    /* transform: translate(x축, y축) */
+    transform: translate(-50%, -50%);
+    /* %(백분율)기준: 텍스트 자신 */
+    border-radius: 10px;
+    opacity: 0;
+    /* 0으로 바꾸면 존재가 사라지는게 아니라 있으나 우리눈에 안보임 */
+    color: #fff;
+    transition: 0.3s;
+}
+
+
+#전체 .놀부 .자식.자식4:hover .text {
+    opacity: 1;
+    top: 50%;
+}

@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.어떤마을 .약::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.어떤마을 {
+    background-color: #176B87;
+    padding: 20px;
+}
+
+.어떤마을 .놀부 {
+    background-color: #5C5470;
+    padding: 20px;
+}
+
+.어떤마을 .놀부 .자식 {
+    background-color: #5C8374;
+    float: left;
+}
+
+.어떤마을 .놀부 .자식.하나 {}
+
+.어떤마을 .놀부 .자식.둘 {}
+
+.어떤마을 .놀부 .자식.셋 {}
+
+.어떤마을 .놀부 .자식.넷 {}
+
+.어떤마을 .놀부 .효자 {
+    clear: both;
+}
+
+/* 붙여적는것은 이름이 자식이면서 하나인것, 결국 하나를 부르는것 */
+
+.어떤마을 .흥부 {
+    background-color: #C8AE7D;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.어떤마을 .흥부:hover {
+    color: blue;
+}
+
+/* before, atter : html에는 없는 공간을 css에서 만든 가상요소, 디자인적인 공간 */
+/* ::before, ::after는 inline요소이다 (글자와 같은 성질) 
+        inline요소는 공간을 인식하지 못함 (넓이와 높이)
+        clear: both는 부모가 공간을 인식하지 못할때 인식할수 있도록 함
+        단, clear: both는 block요소 일때만 실행됨 */
+/* ::before, ::after{content: ""}는 세트 */
+.어떤마을 .흥부::before {
+    content: "";
+}
+
+.어떤마을 .흥부::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.어떤마을 .흥부 .자식 {
+    background-color: #5C8374;
+    float: left;
+}
+
+.어떤마을 .흥부 .자식.하나 {}
+
+.어떤마을 .흥부 .자식.둘 {}
+
+.어떤마을 .흥부 .자식.셋 {}
+
+.어떤마을 .흥부 .자식.넷 {}
+
+
+.칠부{background-color: #3F2E3E; margin-top: 30px; padding: 20px;}
+.칠부 .자식{background-color: #7D7463; float: left;}
+.칠부 .자식.하나{}
+.칠부 .자식.둘{}
+.칠부 .자식.셋{}
+.칠부 .자식.넷{}

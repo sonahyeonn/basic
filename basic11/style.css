@@ -1,0 +1,27 @@
+*{margin: 0;padding: 0;}
+
+.wrap{padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #a26666;}
+.wrap>div{
+    height: 300px;
+    background-color: rgb(82, 82, 159);
+    border:  10px solid rgb(67, 28, 59);
+}
+
+.wrap>div.child1{
+    /* margin-top: 100px; */
+    margin-bottom: 100px;}
+.wrap>div.child2{margin-top: 100px;}
+.wrap>div.child3{}
+
+/* 
+***** margin
+상하 -> 둘중 큰 값이 들어간다 (100px 200px 일때 200px)
+좌우 -> 더해진다 (100px 200px일때 300px)
+
+***** 큰 영역안의 공간을 잡을때 margin말고 padding을 써야하는 이유!
+첫번째 자식을 내리고 싶어서 margin-top값을 주면 maring 병합 현상으로 인해
+부모도 밀려서 빈 공간이 생기므로 그럴때는 부모에게 padding을 준다
+아래도 마찬가지
+*/ 

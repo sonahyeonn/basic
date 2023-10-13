@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.부모 {
+    /* 포지션이 없으면 top, left 값을 가지지 않는다 */
+    position: relative;
+    top: 200px;
+    left: 200px;
+    margin-top: 100px;
+    margin-left: 100px;
+    background-color: #A76F6F;
+    width: 1000px;
+    background-image: url(https://manual.notch.one/0.9.23/en/docs/nodes/generators/grid/img/node-generators-grid-img.jpg);
+    background-size: cover;
+    margin-bottom: 3000px;
+}
+
+.부모 .자식 {
+    height: 200px;
+    width: 200px;
+}
+
+.부모 .첫째 {
+    background-color: lightblue;
+    left: 200px;
+    position: relative;
+    /* 자리를 옮겨도 원래 자리를 기억함, 주위에 아무런 영향을 주지 않음 */
+}
+
+.부모 .둘째 {
+    background-color: lightcoral;
+    position: absolute;
+    /* 죽은 자식, 떠 있음 부모에게 포지션이 있으면 부모에게 매달려 있고 부모에게 포지션이 없으면 body에 매달려 있는다. 자식이나 형제에는 붙지 않는다 */
+    left: 50px;
+    top: 0;
+}
+
+.부모 .셋째 {
+    background-color: #606C5D;
+    position: static;
+    /* 기본값 */
+}
+
+.부모 .넷째 {
+    background-color: #99627A;
+    position: fixed;
+    /* 죽은 자식, 화면에 붙는다 */
+    right: 0;
+    top: 200px;
+}

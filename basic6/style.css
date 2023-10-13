@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.전체 {
+    width: 352px;
+    background-color: #022058;
+    margin: auto;
+    margin-top: 30px;
+    /* 두개 순서(자리) 바꾸지 말것 */
+    overflow: hidden;
+}
+
+.전체 .자식 {
+    width: 104px;
+    height: 104px;
+    background-color: pink;
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 104px;
+    color: white;
+}
+
+.전체 .첫째 {
+    background-image: url(img/img-1.png);
+    transition: 0.3s;
+}
+
+/* hover: 첫째 영역에다 만약에 가상으로 마우스를 올리면 */
+.전체 .첫째:hover {
+    background-image: url(img/img-2.jpg)
+}
+
+.전체 .둘째 {
+    background-image: url(img/img-2.jpg);
+}
+
+/* : -> 실제 있는 영역에다가 마우스를 올리면
+:: -> css에서 만든 가상 영역에다가 마우스를 올리면 
+before는 html에서 항상 맨앞 after는 html에서 항상 맨아래 */
+.전체 .둘째::before {
+    content: "before";
+}
+
+.전체 .둘째::after {
+    content: "after";
+}
+
+.전체 .셋째 {
+    margin-right: 0;
+    background-image: url(img/img-3.png);
+}
+
+.전체 .약 {
+    clear: both;
+}
+
+
+
+.치매약::after{
+    /* 인라인요소(글자와같은성질, after)는 공간을 인식하지 못함 (반대 블록요소) */
+    /* css에서 after를 만들어 준 다음에는 html에 가서 적용할 요소에 동일하게 class 이름에 치매약을 넣어준다 */
+    content: ""; display: block; clear: both;}
+
+
+
+
+.부모 {
+    background-color: #941111;
+    margin: auto;
+    margin-top: 30px;
+    width: 1000px;
+    padding: 20px;
+}
+
+
+.부모 .child {
+    background-color: #043925;
+    width: 33.3333%;
+    float: left;
+}
+
+.부모 .일동 {}
+
+.부모 .이동 {}
+
+.부모 .삼동 {}
+
+
+
+
+
+
+.삼촌 {
+    background-color: #941111;
+    margin: auto;
+    margin-top: 30px;
+    width: 1000px;
+    padding: 20px;
+}
+
+.삼촌 .child {
+    background-color: #043925;
+    width: 33.3333%;
+    float: left;
+}
